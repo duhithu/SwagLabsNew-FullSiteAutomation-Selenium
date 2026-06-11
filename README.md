@@ -1,69 +1,205 @@
 # Swag Labs Test Automation Project
 
-This repository contains an automated testing suite developed for the "Swag Labs" web portal using Java, Selenium WebDriver, and TestNG. The objective of this project is to apply advanced software quality assurance methodologies by implementing end-to-end automation scripts to validate various user workflows in a simulated real-world e-commerce application.
+## 📌 Overview
+
+This repository contains an automated testing suite developed for the **Swag Labs** web application using **Java**, **Selenium WebDriver**, and **TestNG**.
+
+The objective of this project is to apply software quality assurance and test automation practices by implementing end-to-end automated test cases that validate critical user workflows in a real-world e-commerce environment.
 
 ---
 
-## 🛠️ Technology Stack & Tools
+## 🛠️ Technology Stack
 
-* **Programming Language:** Java
-* **Automation Tool:** Selenium WebDriver
-* **Testing Framework:** TestNG
-* **Build/IDE Environment:** IntelliJ IDEA Community Edition
-* **Web Browser:** Google Chrome (Chrome Driver)
-* **Reporting/Screenshots:** Apache Commons IO (`FileUtils` for taking error screenshots)
-
----
-
-## 🧪 Automated Test Suite Coverage
-
-The project covers a total of 9 critical test scenarios ranging from core authentication checks to complete transactional happy paths:
-
-### 1. Authentication Scenarios (`SwagLabsNew.java`)
-* **Valid Login:** Validates access using standard user credentials.
-* **Invalid Username:** Ensures the system correctly rejects unrecognized usernames.
-* **Invalid Password:** Ensures proper error notification for incorrect password attempts.
-* **Empty Credentials:** Checks validation behavior when fields are left blank.
-* **Locked Out User:** Assures specific restriction messages are handled for restricted users.
-
-### 2. UI & Inventory Validation (`SwagLabsNew_VerifyTheProductPage.java`)
-* Verifies successful redirection to the main inventory screen and ensures the presence of core header elements like the product banner.
-
-### 3. Side Navigation Workflows (`SwagLabsnew_OpenLeftSideMenuAndCloseIt.java`)
-* Focuses on element visibility and menu interactability by opening the primary burger drawer menu and then closing it via its cross indicator button.
-
-### 4. Direct Cart Interactions (`SwagLabsNew_AddToCardAndRemove.java`)
-* Directly tests button state toggles on the main products display page by interacting with the "Add to Cart" and "Remove" triggers.
-
-### 5. Product Detailed Cards Validation (`SawgLabsNew_ProductCardTest.java`)
-* Navigates into individual item focus pages to verify detail layouts (names, descriptions, image paths, and pricing data) along with returning to the store catalogue.
-
-### 6. Cart Management Operations (`SwagLabsNew_AddToTheCardPageAndRemoveItInCart.java`)
-* Evaluates adding items to the basket, loading the dedicated Cart Page, validating item string descriptors, currency markers (`$`), and executing explicit items deletion inside the cart wrapper.
-
-### 7. Checkout Workflows (`SawgLabsNew_CheckOutWithFinal.java`)
-* Directs standard delivery input forms submission and ensures mathematical precision checks on the financial calculation formula (Item Total + System Tax = Gross Total Price).
-
-### 8. Transactional Cancellations (`SawgLabsNew_CheckOutWithCancel.java`)
-* Completes initial checkout form operations but interacts with the 'Cancel' navigation button to ensure returning states reset correctly back to the core inventory window.
-
-### 9. Complete End-to-End Happy Path (`SwagLabsNew_ThankYou.java`)
-* Exercises the full e-commerce flow: authenticates the session, assigns an item to the cart, proceeds through standard receipt formatting, confirms accurate tax math, executes final processing, and asserts the successful appearance of the `"THANK YOU FOR YOUR ORDER"` header flag.
+| Technology                         | Purpose                            |
+| ---------------------------------- | ---------------------------------- |
+| ☕ Java                             | Programming Language               |
+| 🤖 Selenium WebDriver              | Web Automation                     |
+| 🧪 TestNG                          | Test Framework                     |
+| 💻 IntelliJ IDEA Community Edition | Development Environment            |
+| 🌐 Google Chrome                   | Test Browser                       |
+| 📸 Apache Commons IO               | Screenshot Capture & File Handling |
 
 ---
 
-## 📁 Repository Structure
+## 🚀 Automated Test Coverage
+
+### 🔐 1. Authentication Scenarios
+
+**File:** `SwagLabsNew.java`
+
+✅ Valid Login
+✅ Invalid Username Validation
+✅ Invalid Password Validation
+✅ Empty Credentials Validation
+✅ Locked-Out User Validation
+
+---
+
+### 🛍️ 2. Product Page Verification
+
+**File:** `SwagLabsNew_VerifyTheProductPage.java`
+
+✅ Successful redirection to Inventory Page
+✅ Product banner validation
+✅ Header element verification
+
+---
+
+### ☰ 3. Side Navigation Menu Testing
+
+**File:** `SwagLabsnew_OpenLeftSideMenuAndCloseIt.java`
+
+✅ Open Burger Menu
+✅ Verify Menu Visibility
+✅ Close Menu Functionality
+
+---
+
+### 🛒 4. Add to Cart & Remove Actions
+
+**File:** `SwagLabsNew_AddToCardAndRemove.java`
+
+✅ Add Product to Cart
+✅ Remove Product from Cart
+✅ Button State Validation
+
+---
+
+### 📦 5. Product Details Validation
+
+**File:** `SawgLabsNew_ProductCardTest.java`
+
+✅ Open Product Details Page
+✅ Verify Product Name
+✅ Verify Description
+✅ Verify Product Image
+✅ Verify Pricing Information
+✅ Navigate Back to Inventory
+
+---
+
+### 🛍️ 6. Cart Management Operations
+
+**File:** `SwagLabsNew_AddToTheCardPageAndRemoveItInCart.java`
+
+✅ Add Item to Cart
+✅ Open Cart Page
+✅ Verify Product Details
+✅ Verify Currency Symbol ($)
+✅ Remove Item from Cart
+
+---
+
+### 💳 7. Checkout Workflow
+
+**File:** `SawgLabsNew_CheckOutWithFinal.java`
+
+✅ Complete Checkout Form
+✅ Verify Item Total
+✅ Verify Tax Calculation
+✅ Validate Final Total Formula
+
+**Formula Checked:**
+
+Item Total + Tax = Total Price
+
+---
+
+### ❌ 8. Checkout Cancellation
+
+**File:** `SawgLabsNew_CheckOutWithCancel.java`
+
+✅ Start Checkout Process
+✅ Cancel Checkout
+✅ Verify Return to Inventory Page
+
+---
+
+### 🎉 9. Complete End-to-End Purchase Flow
+
+**File:** `SwagLabsNew_ThankYou.java`
+
+✅ User Login
+✅ Add Product to Cart
+✅ Checkout Process
+✅ Tax & Total Validation
+✅ Order Completion
+✅ Verify **"THANK YOU FOR YOUR ORDER"** Message
+
+---
+
+## 📁 Project Structure
 
 ```text
-├── src/
-│   └── StandardSelenium/
-│       ├── 1.SwagLabsNew-4logintest.java
-│       ├── 2.SwagLabsNew_VerifyTheProductPage.java
-│       ├── 3.SwagLabsnew_OpenLeftSideMenuAndCloseIt.java
-│       ├── 4.SwagLabsNew_AddToCardAndRemove.java
-│       ├── 5.SawgLabsNew_ProductCardTest.java
-│       ├── 6.SwagLabsNew_AddToTheCardPageAndRemoveItInCart.java
-│       ├── 7.SawgLabsNew_CheckOutWithFinal.java
-│       ├── 8.SawgLabsNew_CheckOutWithCancel.java
-│       └── 9.SwagLabsNew_ThankYou.java
-└── README.md
+📦 SwagLabs-Test-Automation
+│
+├── 📂 src
+│   └── 📂 StandardSelenium
+│       ├── 1️⃣ SwagLabsNew-4logintest.java
+│       ├── 2️⃣ SwagLabsNew_VerifyTheProductPage.java
+│       ├── 3️⃣ SwagLabsnew_OpenLeftSideMenuAndCloseIt.java
+│       ├── 4️⃣ SwagLabsNew_AddToCardAndRemove.java
+│       ├── 5️⃣ SawgLabsNew_ProductCardTest.java
+│       ├── 6️⃣ SwagLabsNew_AddToTheCardPageAndRemoveItInCart.java
+│       ├── 7️⃣ SawgLabsNew_CheckOutWithFinal.java
+│       ├── 8️⃣ SawgLabsNew_CheckOutWithCancel.java
+│       └── 9️⃣ SwagLabsNew_ThankYou.java
+│
+└── 📄 README.md
+```
+
+---
+
+## ▶️ How to Run
+
+### Prerequisites
+
+* ☕ Java JDK 8 or higher
+* 🌐 Google Chrome
+* 🚗 ChromeDriver
+* 💻 IntelliJ IDEA
+* 🧪 TestNG
+
+### Steps
+
+1. Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+2. Open the project in IntelliJ IDEA.
+
+3. Configure ChromeDriver.
+
+4. Install project dependencies.
+
+5. Run the desired TestNG test class.
+
+---
+
+## 📊 Test Features
+
+✨ Automated UI Testing
+✨ Functional Validation
+✨ End-to-End Workflow Testing
+✨ Checkout Calculation Verification
+✨ Error Handling Validation
+✨ Screenshot Support for Failures
+✨ Cross-Page Navigation Testing
+
+---
+
+## 🎯 Project Outcome
+
+This automation suite successfully validates critical Swag Labs functionalities including:
+
+* 🔐 User Authentication
+* 🛍️ Product Browsing
+* 🛒 Cart Management
+* 💳 Checkout Processing
+* 🎉 Order Completion
+
+The project demonstrates practical implementation of Selenium WebDriver automation using TestNG and follows structured software testing practices for web applications.
+
+
