@@ -202,4 +202,6 @@ This automation suite successfully validates critical Swag Labs functionalities 
 
 The project demonstrates practical implementation of Selenium WebDriver automation using TestNG and follows structured software testing practices for web applications.
 
+---
 
+https://github.com/duhithu
